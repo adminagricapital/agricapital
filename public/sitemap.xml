@@ -78,4 +78,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://agricapital.ci/actualites/inauguration-bureau-proximite-gonate-dalora</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://agricapital.ci/actualites/leve-topographique-prospection-terrain</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://agricapital.ci/actualites/pepiniere-plants-palmier-daloa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://agricapital.ci/actualites/premiere-formation-conseillers-commerciaux</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
