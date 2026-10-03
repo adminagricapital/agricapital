@@ -1600,6 +1600,222 @@ export type Database = {
         }
         Relationships: []
       }
+      service_categories: {
+        Row: {
+          created_at: string
+          icon: string | null
+          id: string
+          is_published: boolean
+          slug: string
+          sort_order: number
+          subtitle: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          icon?: string | null
+          id?: string
+          is_published?: boolean
+          slug: string
+          sort_order?: number
+          subtitle?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          icon?: string | null
+          id?: string
+          is_published?: boolean
+          slug?: string
+          sort_order?: number
+          subtitle?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      service_order_events: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          note: string | null
+          order_id: string
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          note?: string | null
+          order_id: string
+          status: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          note?: string | null
+          order_id?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "service_order_events_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "service_orders"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      service_orders: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          customer_company: string | null
+          customer_email: string
+          customer_name: string
+          customer_phone: string | null
+          id: string
+          internal_notes: string | null
+          message: string | null
+          options: Json
+          order_number: string
+          payment_provider: string | null
+          payment_reference: string | null
+          payment_status: string
+          service_id: string | null
+          service_slug: string | null
+          service_title: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          customer_company?: string | null
+          customer_email: string
+          customer_name: string
+          customer_phone?: string | null
+          id?: string
+          internal_notes?: string | null
+          message?: string | null
+          options?: Json
+          order_number?: string
+          payment_provider?: string | null
+          payment_reference?: string | null
+          payment_status?: string
+          service_id?: string | null
+          service_slug?: string | null
+          service_title: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          customer_company?: string | null
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string | null
+          id?: string
+          internal_notes?: string | null
+          message?: string | null
+          options?: Json
+          order_number?: string
+          payment_provider?: string | null
+          payment_reference?: string | null
+          payment_status?: string
+          service_id?: string | null
+          service_slug?: string | null
+          service_title?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "service_orders_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      services: {
+        Row: {
+          bullets: Json
+          category_id: string | null
+          created_at: string
+          delivery_note: string | null
+          description: string | null
+          id: string
+          image_url: string | null
+          is_featured: boolean
+          is_orderable: boolean
+          is_published: boolean
+          metadata: Json
+          price: number | null
+          price_note: string | null
+          slug: string
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          bullets?: Json
+          category_id?: string | null
+          created_at?: string
+          delivery_note?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_featured?: boolean
+          is_orderable?: boolean
+          is_published?: boolean
+          metadata?: Json
+          price?: number | null
+          price_note?: string | null
+          slug: string
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          bullets?: Json
+          category_id?: string | null
+          created_at?: string
+          delivery_note?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          is_featured?: boolean
+          is_orderable?: boolean
+          is_published?: boolean
+          metadata?: Json
+          price?: number | null
+          price_note?: string | null
+          slug?: string
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "services_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "service_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       site_content: {
         Row: {
           content_ar: string | null
