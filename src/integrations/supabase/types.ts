@@ -1376,30 +1376,36 @@ export type Database = {
         Row: {
           city: string | null
           country: string | null
+          country_code: string | null
           created_at: string
           id: string
           page_path: string
           referrer: string | null
+          region: string | null
           user_agent: string | null
           visitor_id: string
         }
         Insert: {
           city?: string | null
           country?: string | null
+          country_code?: string | null
           created_at?: string
           id?: string
           page_path: string
           referrer?: string | null
+          region?: string | null
           user_agent?: string | null
           visitor_id: string
         }
         Update: {
           city?: string | null
           country?: string | null
+          country_code?: string | null
           created_at?: string
           id?: string
           page_path?: string
           referrer?: string | null
+          region?: string | null
           user_agent?: string | null
           visitor_id?: string
         }
